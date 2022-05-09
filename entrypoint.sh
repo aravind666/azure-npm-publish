@@ -19,4 +19,5 @@ echo "Here is the list of files"
 ls -la 
 
 ls -ltr
+npm ci 
 npm publish --registry=$7
