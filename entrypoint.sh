@@ -16,6 +16,6 @@ if [ "$1" ] && [ "$1" != "." ]; then
   cd $1
 fi
 
-mv /default.npmrc .
+mv /default.npmrc .npmrc
 ls -ltr
 npm publish
