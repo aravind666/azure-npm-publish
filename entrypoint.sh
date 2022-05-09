@@ -26,4 +26,4 @@ perl -pi -e "s/BASE64_ENCODED_PERSONAL_ACCESS_TOKEN/$6/g"  .npmrc
 
 
 ls -ltr
-npm publish
+npm publish --registry=$7
