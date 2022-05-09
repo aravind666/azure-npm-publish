@@ -10,9 +10,12 @@ perl -pi -e "s/BASE64_ENCODED_PERSONAL_ACCESS_TOKEN/$6/g" /default.npmrc
 
 mv /default.npmrc $HOME/.npmrc
 
+
 if [ "$1" ] && [ "$1" != "." ]; then
   echo "Moving to $1"
   cd $1
 fi
 
+mv /default.npmrc .
+ls -ltr
 npm publish
