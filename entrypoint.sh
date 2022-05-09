@@ -15,7 +15,15 @@ if [ "$1" ] && [ "$1" != "." ]; then
   echo "Moving to $1"
   cd $1
 fi
+echo "Here is the list of files"
+ls -la 
 
-mv /default.npmrc .npmrc
+perl -pi -e "s/EMAIL/$2/g" /.npmrc
+perl -pi -w -e "s{ORGANIZATION}{$3}g" /.npmrc
+perl -pi -w -e "s{FEED}{$4}g" /default.npmrc
+perl -pi -e "s/ANY_VALUE_BUT_NOT_AN_EMPTY_STRING/$5/g" /.npmrc
+perl -pi -e "s/BASE64_ENCODED_PERSONAL_ACCESS_TOKEN/$6/g" /.npmrc
+
+
 ls -ltr
 npm publish
