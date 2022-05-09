@@ -21,6 +21,9 @@ inputs:
   base64-token:
     description: 'Value which replaces [BASE64_ENCODED_PERSONAL_ACCESS_TOKEN] in the .npmrc file'
     required: true
+  registry:
+    description: 'Registry with HTTPS URL'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -31,6 +34,7 @@ runs:
     - ${{ inputs.feed }}
     - ${{ inputs.username }}
     - ${{ inputs.base64-token }}
+    - ${{ inputs.registry }}
 branding:
   icon: 'upload-cloud'
   color: 'blue'
